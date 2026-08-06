@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ParkMe - Book</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="book.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">🅿 ParkMe</div>
+        <div class="nav">
+          <a href="mainpage.html">Home</a>
+          <a href="book.html">Book</a>
+          <a href="profile.html">Profile</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h1>Book a parking spot</h1>
+        <p>Select a convenient time slot near your destination.</p>
+
+        <div class="grid">
+          <div class="slot nearest">
+            <span class="badge">Nearest</span>
+            <h3>Central Plaza</h3>
+            <p>2:30 PM - 4:30 PM</p>
+            <p>Price: £8.50</p>
+            <button class="reserve-btn" data-name="Central Plaza" data-lat="51.5074" data-lng="-0.1278">Reserve</button>
+          </div>
+          <div class="slot">
+            <h3>River View</h3>
+            <p>4:00 PM - 6:00 PM</p>
+            <p>Price: £10.00</p>
+            <button class="reserve-btn" data-name="River View" data-lat="51.509" data-lng="-0.132">Reserve</button>
+          </div>
+          <div class="slot">
+            <h3>Metro Station</h3>
+            <p>6:30 PM - 8:30 PM</p>
+            <p>Price: £6.75</p>
+            <button class="reserve-btn" data-name="Metro Station" data-lat="51.5033" data-lng="-0.1195">Reserve</button>
+          </div>
+          <div class="slot">
+            <h3>City Center</h3>
+            <p>8:00 PM - 10:00 PM</p>
+            <p>Price: £9.25</p>
+            <button class="reserve-btn" data-name="City Center" data-lat="51.5154" data-lng="-0.1419">Reserve</button>
+          </div>
+        </div>
+
+        <div class="booking-form">
+          <h3>Reserve your spot</h3>
+          <label>Parking location</label>
+          <input id="selectedLocation" type="text" value="Central Plaza" readonly />
+
+          <div class="row">
+            <div>
+              <label>Arrival time</label>
+              <input id="arrivalTime" type="time" value="14:30" />
+            </div>
+            <div>
+              <label>Duration</label>
+              <select id="duration">
+                <option value="1">1 hour</option>
+                <option value="2">2 hours</option>
+                <option value="3">3 hours</option>
+                <option value="4">4 hours</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Payment method</label>
+          <select id="paymentMethod">
+            <option value="Card">Card</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Cash">Cash</option>
+          </select>
+
+          <label>Extra options</label>
+          <select id="extraOption">
+            <option value="EV charging">EV charging</option>
+            <option value="Covered spot">Covered spot</option>
+            <option value="Disabled access">Disabled access</option>
+          </select>
+
+          <label>Advance booking</label>
+          <select id="advanceBooking">
+            <option value="No">No</option>
+            <option value="Yes, pay before 2 hours">Yes, pay before 2 hours</option>
+          </select>
+
+          <label>Number of bookings</label>
+          <input id="bookingCount" type="number" min="1" max="5" value="1" />
+
+          <label>Car model</label>
+          <input id="carModel" type="text" placeholder="e.g. Toyota Corolla" />
+
+          <label>Plate number</label>
+          <input id="plateNumber" type="text" placeholder="e.g. AB12 CDE" />
+
+          <div class="price-box" id="priceBox">
+            <strong>Estimated parking price:</strong>
+            <div id="priceSummary">Select a parking space to see the price.</div>
+          </div>
+
+          <div class="payment-box">
+            <h4>Payment</h4>
+            <label>Card number</label>
+            <input id="cardNumber" type="text" placeholder="1234 5678 9012 3456" />
+            <label>Expiry date</label>
+            <input id="expiryDate" type="text" placeholder="MM/YY" />
+            <label>CVV</label>
+            <input id="cvv" type="text" placeholder="123" />
+          </div>
+
+          <button id="confirmBooking" type="button">Confirm booking</button>
+          <div id="confirmBox" class="confirm-box"></div>
+        </div>
+
+        <div class="map-card">
+          <h3>Directions to selected parking</h3>
+          <p id="mapMessage">Choose a parking space to see it on the map.</p>
+          <div class="map-wrapper">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+    <script src="book.js" defer></script>
+  </body>
+</html>
