@@ -36,45 +36,9 @@ The app uses:
 - JavaScript files: `mainpage.js`, `book.js`, `profile.js`, `login.js`
 - `README.md` — this documentation file
 
-## Prerequisites
-
-- Modern browser (Chrome, Edge, Firefox, Safari)
-- Internet access for Leaflet CDN and OpenStreetMap tile loading
-
-## Run Locally
-
-From the project folder, use a static server. Example with Python 3:
-
-```powershell
-python -m http.server 8000
-```
-
-Open the site at:
-
-```text
-http://localhost:8000/mainpage.html
-```
-
-You may also use the VS Code Live Server extension for local preview.
-
-## Upload Preparation
-
-- Verify all HTML, CSS, and JS files are included in the upload package.
-- Keep the `README.md` with project overview, running instructions, and file list.
-- Ensure the site is served from a static host so Leaflet and OpenStreetMap assets load correctly.
-
-## Troubleshooting
-
-- If the map does not render, confirm the browser console for network errors or blocked CDN requests.
-- If booking or search interactions fail, inspect the JavaScript console for runtime error details.
-- If location is not available, allow browser location permissions and refresh the page.
 
 ## Credits
 
 - Map library: Leaflet
 - Map data: OpenStreetMap
-- UI and scripting: built with HTML, CSS, and vanilla JavaScript
-
----
-
-This README is ready for upload with clear instructions, page details, and usage guidance.
+- UI and scripting: built with HTML, CSS, and vanilla 
