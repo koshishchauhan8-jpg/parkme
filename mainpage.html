@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ParkMe Main Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="mainpage.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <span class="logo-mark">🅿</span>
+          <div class="logo-wordmark">
+            <span>Park</span><span class="logo-highlight">Me</span>
+          </div>
+        </div>
+        <div class="nav">
+          <a href="mainpage.html">Home</a>
+          <a href="book.html">Book</a>
+          <a href="profile.html">Profile</a>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="left">
+          <h1>Find best parking spots near you.</h1>
+          <p>ParkMe helps you find a safe and easy place to park in just a few steps.</p>
+          <div class="search-group">
+            <input id="searchInput" type="text" placeholder="Search parking area" />
+            <button id="searchButton" type="button">Search</button>
+          </div>
+        </div>
+
+        <div class="right">
+          <h3>Nearby booking spaces</h3>
+          <p>We found parking spots close to your current location.</p>
+          <div id="nearbyList" class="nearby-list"></div>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <h3>Parking map</h3>
+        <p>Explore nearby parking zones and spot availability around the selected area.</p>
+        <div class="map-wrapper">
+          <div id="map" aria-label="Interactive parking map"></div>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="box">
+          <h3>120+</h3>
+          <p>Parking zones</p>
+        </div>
+        <div class="box">
+          <h3>94%</h3>
+          <p>Happy drivers</p>
+        </div>
+        <div class="box">
+          <h3>12k</h3>
+          <p>Monthly bookings</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>ParkMe</h3>
+          <p>Smart parking for every drive.</p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="mainpage.html">Home</a>
+          <a href="book.html">Book</a>
+          <a href="profile.html">Profile</a>
+        </div>
+        <div class="footer-contact">
+          <a href="https://api.whatsapp.com/send?phone=07344064102" target="_blank" rel="noopener">WhatsApp Support</a>
+          <span>support@parkme.example</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ParkMe. All rights reserved.</span>
+        <span>Trusted parking bookings made simple.</span>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+    <script src="mainpage.js" defer></script>
+  </body>
+</html>
