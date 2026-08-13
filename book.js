@@ -111,23 +111,3 @@ durationInput.addEventListener('change', () => {
     updatePrice(location);
   }
 });
-
-confirmButton.addEventListener('click', () => {
-  const location = selectedLocationInput.value;
-  const arrivalTime = arrivalTimeInput.value || 'Not selected';
-  const duration = durationInput.value;
-  const paymentMethod = paymentMethodInput.value;
-  const extraOption = extraOptionInput.value;
-  const advanceBooking = advanceBookingInput.value;
-  const bookingCount = bookingCountInput.value;
-  const carModel = carModelInput.value || 'Not provided';
-  const plateNumber = plateNumberInput.value || 'Not provided';
-  const cardNumber = cardNumberInput.value.replace(/\D/g, '');
-  const maskedCard = cardNumber ? `•••• ${cardNumber.slice(-4)}` : 'Not provided';
-  const confirmationNumber = `PKM-${Math.floor(1000 + Math.random() * 9000)}`;
-  const basePrice = parkingPrices[location] || 8.5;
-  const totalPrice = (basePrice * parseInt(duration, 10) * parseInt(bookingCount, 10)).toFixed(2);
-
-  confirmBox.style.display = 'block';
-  confirmBox.innerHTML = `Booking confirmed!<br>Confirmation number: ${confirmationNumber}<br>Location: ${location}<br>Arrival: ${arrivalTime}<br>Duration: ${duration} hour(s)<br>Payment: ${paymentMethod}<br>Advance booking: ${advanceBooking}<br>Bookings: ${bookingCount}<br>Car model: ${carModel}<br>Plate number: ${plateNumber}<br>Card: ${maskedCard}<br>Total amount: £${totalPrice}`;
-});
